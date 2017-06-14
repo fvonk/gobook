@@ -10,15 +10,19 @@ package main
 import (
 	"fmt"
 	"os"
+	"strconv"
+	"time"
 )
 
 func main() {
-	s, sep := "", ""
-	for _, arg := range os.Args[1:] {
-		s += sep + arg
-		sep = " "
+	t := time.Now()
+	s := ""
+	for idx, arg := range os.Args[0:] {
+		s += strconv.Itoa(idx) + " " + arg + "\n"
 	}
 	fmt.Println(s)
+	duration := time.Since(t)
+	fmt.Printf("%f\n", duration.Seconds())
 }
 
 //!-

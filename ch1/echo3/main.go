@@ -10,11 +10,20 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"time"
+)
+
+const (
+    // See http://golang.org/pkg/time/#Parse
+    timeFormat = "2006-01-02 15:04 MST"
 )
 
 //!+
 func main() {
-	fmt.Println(strings.Join(os.Args[1:], " "))
+	t := time.Now()
+	fmt.Println(strings.Join(os.Args[0:], " "))
+	duration := time.Since(t)
+	fmt.Printf("%f\n", duration.Seconds())
 }
 
 //!-
