@@ -10,7 +10,6 @@ package main
 import (
 	"fmt"
 	"os"
-	"strconv"
 	"time"
 )
 
@@ -18,7 +17,7 @@ func main() {
 	t := time.Now()
 	s := ""
 	for idx, arg := range os.Args[0:] {
-		s += strconv.Itoa(idx) + " " + arg + "\n"
+		s += string(idx) + " " + arg + "\n"
 	}
 	fmt.Println(s)
 	duration := time.Since(t)
