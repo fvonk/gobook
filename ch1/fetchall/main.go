@@ -16,16 +16,30 @@ import (
 	"time"
 )
 
+func check(e error) {
+	if e != nil {
+		fmt.Fprintf(os.Stderr, "Error: %v\n", e)
+		panic(e)
+	}
+}
+
 func main() {
 	start := time.Now()
 	ch := make(chan string)
 	for _, url := range os.Args[1:] {
 		go fetch(url, ch) // start a goroutine
 	}
+	err := ioutil.WriteFile("results", []byte("here is result\n"), 0644)
+	check(err)
+	f, err := os.OpenFile("results", os.O_APPEND|os.O_WRONLY, os.ModeAppend)
+	check(err)
 	for range os.Args[1:] {
-		fmt.Println(<-ch) // receive from channel ch
+		_, err = f.Write([]byte(<-ch + "\n"))
+		check(err)
 	}
-	fmt.Printf("%.2fs elapsed\n", time.Since(start).Seconds())
+	_, err = f.Write([]byte(fmt.Sprintf("%.2fs elapsed\n", time.Since(start).Seconds())))
+	check(err)
+	f.Close()
 }
 
 func fetch(url string, ch chan<- string) {

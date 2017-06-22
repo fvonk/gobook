@@ -1,0 +1,11 @@
+here is result
+0.42s     7902  https://golang.org
+0.80s     4154  http://gopl.io
+1.22s   265366  http://try.alexa.com/marketing-stack
+1.30s     6883  https://godoc.org
+1.52s   239155  http://try.alexa.com/marketing-stack/audience-overlap-tool
+4.90s    26680  https://www.alexa.com/secure/login
+5.51s    94383  http://www.alexa.com/plans
+6.38s    26680  https://www.alexa.com/secure/login
+11.03s   249147  http://www.alexa.com
+11.03s elapsed
