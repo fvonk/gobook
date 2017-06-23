@@ -29,17 +29,19 @@ func main() {
 	for _, url := range os.Args[1:] {
 		go fetch(url, ch) // start a goroutine
 	}
-	err := ioutil.WriteFile("results", []byte("here is result\n"), 0644)
-	check(err)
-	f, err := os.OpenFile("results", os.O_APPEND|os.O_WRONLY, os.ModeAppend)
-	check(err)
+	// err := ioutil.WriteFile("results", []byte("here is result\n"), 0644)
+	// check(err)
+	// f, err := os.OpenFile("results", os.O_APPEND|os.O_WRONLY, os.ModeAppend)
+	// check(err)
 	for range os.Args[1:] {
-		_, err = f.Write([]byte(<-ch + "\n"))
-		check(err)
+		// _, err = f.Write([]byte(<-ch + "\n"))
+		// check(err)
+		fmt.Println(<-ch)
 	}
-	_, err = f.Write([]byte(fmt.Sprintf("%.2fs elapsed\n", time.Since(start).Seconds())))
-	check(err)
-	f.Close()
+	// _, err = f.Write([]byte(fmt.Sprintf("%.2fs elapsed\n", time.Since(start).Seconds())))
+	// check(err)
+	fmt.Printf("%.2fs elapsed\n", time.Since(start).Seconds())
+	// f.Close()
 }
 
 func fetch(url string, ch chan<- string) {
