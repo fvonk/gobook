@@ -10,7 +10,8 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Hello, 世界")
+	var color = "#d0ff00"
+	fmt.Println("Hello, 世界 %s", color)
 }
 
 //!-
