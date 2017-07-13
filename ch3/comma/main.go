@@ -20,11 +20,12 @@ import (
 	"fmt"
 	"os"
 	"bytes"
+	"strings"
 )
 
 func main() {
 	for i := 1; i < len(os.Args); i++ {
-		fmt.Printf("  %s\n", commaBuf(os.Args[i]))
+		fmt.Printf("  %s\n", comma(os.Args[i]))
 	}
 }
 
@@ -32,6 +33,12 @@ func main() {
 // comma inserts commas in a non-negative decimal integer string.
 func comma(s string) string {
 	n := len(s)
+	if s[0] == '-' {
+		return "-" + comma(s[1:])
+	}
+	if dot := strings.LastIndex(s, "."); dot >= 0 {
+		return comma(s[:dot]) + s[dot:]
+	}
 	if n <= 3 {
 		return s
 	}
