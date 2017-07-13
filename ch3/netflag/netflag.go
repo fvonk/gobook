@@ -9,6 +9,31 @@ package main
 import (
 	"fmt"
 	. "net"
+	// "math"
+)
+
+const (
+	_ = 1 << (10 * iota)
+	KiB 
+	MiB
+	GiB
+	TiB
+	PiB
+	EiB
+	ZiB
+	YiB
+)
+
+const (
+	_ = 0
+	KB = 1e3
+	MB = 1e6 
+	GB = 1e9
+	TB = 1e12
+	PB = 1e15
+	EB = 1e18
+	ZB = 1e21
+	YB = 1e24
 )
 
 //!+
@@ -25,6 +50,9 @@ func main() {
 	SetBroadcast(&v)
 	fmt.Printf("%b %t\n", v, IsUp(v))   // "10010 false"
 	fmt.Printf("%b %t\n", v, IsCast(v)) // "10010 true"
+
+	fmt.Println(YB/ZB)
+	fmt.Println(uint64(EB))
 }
 
 //!-
