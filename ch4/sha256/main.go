@@ -13,8 +13,25 @@ import "crypto/sha256"
 
 func main() {
 	c1 := sha256.Sum256([]byte("x"))
-	c2 := sha256.Sum256([]byte("X"))
-	fmt.Printf("%x\n%x\n%t\n%T\n", c1, c2, c1 == c2, c1)
+	c2 := sha256.Sum256([]byte("y"))
+	fmt.Printf("%b\n%b\n%t\n%T\n", c1, c2, c1 == c2, c1)
+
+	count := 0
+	for i := 0; i < len(c1); i++ {
+
+		b1 := c1[i]
+        b2 := c2[i]
+        // fmt.Printf("%b %b\n", b1, b2)
+        for j := 0; j < 8; j++ {
+            mask := byte(1 << uint(j))
+            // fmt.Printf("%b %b %b\n", b1 & mask, b2 & mask, mask)
+            if (b1 & mask) != (b2 & mask) {
+                count++
+            }
+        }
+	}
+	fmt.Printf("%d\n", count)
+
 	// Output:
 	// 2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881
 	// 4b68ab3847feda7d6c62c1fbcbeebfa35eab7351ed5e78f4ddadea5df64b8015
