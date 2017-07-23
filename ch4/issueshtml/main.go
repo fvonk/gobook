@@ -8,9 +8,12 @@ package main
 
 import (
 	"log"
-	"os"
+	// "os"
+	"net/http"
+	"strings"
+	"fmt"
 
-	"gopl.io/ch4/github"
+	"gobook/ch4/github"
 )
 
 //!+template
@@ -19,7 +22,7 @@ import "html/template"
 var issueList = template.Must(template.New("issuelist").Parse(`
 <h1>{{.TotalCount}} issues</h1>
 <table>
-<tr style='text-align: left'>
+<tr style='text-align: right'>
   <th>#</th>
   <th>State</th>
   <th>User</th>
@@ -40,11 +43,23 @@ var issueList = template.Must(template.New("issuelist").Parse(`
 
 //!+
 func main() {
-	result, err := github.SearchIssues(os.Args[1:])
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		handler(w, r)	
+	})
+	log.Fatal(http.ListenAndServe("localhost:8000", nil))
+}
+
+func handler(w http.ResponseWriter, r *http.Request) {
+	query := []string{"repo:golang/go"}
+	query1 := strings.TrimPrefix(r.URL.String(), "/")
+	fmt.Printf("oop: %s\n", query1)
+	query = append(query, query1)
+
+	result, err := github.SearchIssues(query)
 	if err != nil {
 		log.Fatal(err)
 	}
-	if err := issueList.Execute(os.Stdout, result); err != nil {
+	if err := issueList.Execute(w, result); err != nil {
 		log.Fatal(err)
 	}
 }

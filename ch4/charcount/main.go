@@ -16,11 +16,12 @@ import (
 	"unicode/utf8"
 )
 
+//ctrl + D
+
 func main() {
 	counts := make(map[rune]int)    // counts of Unicode characters
 	var utflen [utf8.UTFMax + 1]int // count of lengths of UTF-8 encodings
 	invalid := 0                    // count of invalid UTF-8 characters
-
 	in := bufio.NewReader(os.Stdin)
 	for {
 		r, n, err := in.ReadRune() // returns rune, nbytes, error

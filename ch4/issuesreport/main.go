@@ -11,8 +11,9 @@ import (
 	"os"
 	"text/template"
 	"time"
+	"fmt"
 
-	"gopl.io/ch4/github"
+	"gobook/ch4/github"
 )
 
 //!+template
@@ -52,6 +53,7 @@ func main() {
 
 func noMust() {
 	//!+parse
+	fmt.Println("noMust")
 	report, err := template.New("report").
 		Funcs(template.FuncMap{"daysAgo": daysAgo}).
 		Parse(templ)
