@@ -14,15 +14,16 @@ import (
 )
 
 var n = flag.Bool("n", false, "omit trailing newline")
-var sep = flag.String("s", " ", "separator")
+var sep = flag.String("s", "_", "separator")
 
 func main() {
 	flag.Parse()
 	fmt.Print(strings.Join(flag.Args(), *sep))
-	fmt.Print(*n)
+	fmt.Printf("\n%s\n%t\n", *sep, *n)
 	if !*n {
 		fmt.Println()
 	}
 }
 
 //!-
+// go run main.go --n --s /  a bc def
