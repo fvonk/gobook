@@ -16,17 +16,20 @@ import (
 
 func main() {
 	//!+array
-	a := [...]int{0, 1, 2, 3, 4, 5}
-	reverse(a[:])
+	a := []int{0, 1, 2, 3, 4, 5}
 	fmt.Println(a) // "[5 4 3 2 1 0]"
+	// reverse(&a, 6)
+	rotate(a, -1)
+	fmt.Println(a) // "[5 4 3 2 1 0]"
+	fmt.Printf("%T\n", a) // "[5 4 3 2 1 0]"
 	//!-array
 
 	//!+slice
 	s := []int{0, 1, 2, 3, 4, 5}
 	// Rotate s left by two positions.
-	reverse(s[:2])
-	reverse(s[2:])
-	reverse(s)
+	// reverse(s[:2])
+	// reverse(s[2:])
+	// reverse(s)
 	fmt.Println(s) // "[2 3 4 5 0 1]"
 	//!-slice
 
@@ -43,7 +46,8 @@ outer:
 			}
 			ints = append(ints, int(x))
 		}
-		reverse(ints)
+		// reverse(ints)
+		rotate(ints, -12)
 		fmt.Printf("%v\n", ints)
 	}
 	// NOTE: ignoring potential errors from input.Err()
@@ -51,8 +55,31 @@ outer:
 
 //!+rev
 // reverse reverses a slice of ints in place.
-func reverse(s []int) {
-	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
+func rotate(a []int, shift int) {
+	s := shift % len(a)
+	if shift < 0 {
+		s = len(a) + s
+	}
+
+	b := make([]int, len(a), cap(a))
+	copy(b, a)
+	j := 0
+	for i := s; i < len(a) + s; i++ {
+		pos := i
+		if i >= len(a) {
+			pos = i - len(a)
+		}
+		a[pos] = b[j]
+		j++
+	}
+}
+// func reverse(s []int) {
+// 	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
+// 		s[i], s[j] = s[j], s[i]
+// 	}
+// }
+func reverse(s *[32]int, l int) {
+	for i, j := 0, l-1; i < j; i, j = i+1, j-1 {
 		s[i], s[j] = s[j], s[i]
 	}
 }
