@@ -9,9 +9,12 @@ package main
 import (
 	"fmt"
 	"os"
+	"encoding/json"
 
 	"golang.org/x/net/html"
 )
+
+var res = map[string]int{}
 
 //!+
 func main() {
@@ -20,7 +23,13 @@ func main() {
 		fmt.Fprintf(os.Stderr, "outline: %v\n", err)
 		os.Exit(1)
 	}
-	outline(nil, doc)
+	// outline(nil, doc)
+	outlineMap(doc)
+	b, err := json.MarshalIndent(res, "", "  ")
+	if err != nil {
+	    fmt.Println("error:", err)
+	}
+	fmt.Println(string(b))
 }
 
 func outline(stack []string, n *html.Node) {
@@ -30,6 +39,15 @@ func outline(stack []string, n *html.Node) {
 	}
 	for c := n.FirstChild; c != nil; c = c.NextSibling {
 		outline(stack, c)
+	}
+}
+
+func outlineMap(n *html.Node) {
+	if n.Type == html.ElementNode {
+		res[n.Data]++
+	}
+	for c := n.FirstChild; c != nil; c = c.NextSibling {
+		outlineMap(c)
 	}
 }
 
