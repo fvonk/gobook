@@ -9,7 +9,7 @@ package main
 import (
 	"fmt"
 	"os"
-	"encoding/json"
+	// "encoding/json"
 
 	"golang.org/x/net/html"
 )
@@ -24,12 +24,14 @@ func main() {
 		os.Exit(1)
 	}
 	// outline(nil, doc)
-	outlineMap(doc)
-	b, err := json.MarshalIndent(res, "", "  ")
-	if err != nil {
-	    fmt.Println("error:", err)
-	}
-	fmt.Println(string(b))
+	//5.2
+	// outlineMap(doc)
+	// b, err := json.MarshalIndent(res, "", "  ")
+	// if err != nil {
+	//     fmt.Println("error:", err)
+	// }
+	// fmt.Println(string(b))
+	findTexts(doc)
 }
 
 func outline(stack []string, n *html.Node) {
@@ -48,6 +50,23 @@ func outlineMap(n *html.Node) {
 	}
 	for c := n.FirstChild; c != nil; c = c.NextSibling {
 		outlineMap(c)
+	}
+}
+
+func findTexts(n *html.Node) {
+	if n.Type == html.ElementNode {
+		for _, a := range n.Attr {
+			if a.Key == "type" && a.Val == "image/png" {
+				// return
+				// fmt.Printf("%v %v\n", a.Key, a.Val)
+				fmt.Printf("%v\n", n.Data)
+				break
+			}
+		}
+		// fmt.Printf("%v\n", n.Data)
+	}
+	for c := n.FirstChild; c != nil; c = c.NextSibling {
+		findTexts(c)
 	}
 }
 
