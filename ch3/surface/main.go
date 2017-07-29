@@ -80,7 +80,7 @@ func getSVG(w http.ResponseWriter) {
 	fmt.Fprintf(w, "</svg></body></html>")
 }
 
-func corner(i, j int) (float64, float64, string) {
+func corner(i, j int) (sx float64, sy float64, color string) {
 	// Find point (x,y) at corner of cell (i,j).
 	x := xyrange * (float64(i)/cells - 0.5)
 	y := xyrange * (float64(j)/cells - 0.5)
@@ -97,9 +97,10 @@ func corner(i, j int) (float64, float64, string) {
 	}
 
 	// Project (x,y,z) isometrically onto 2-D SVG canvas (sx,sy).
-	sx := width/2 * float64(scale) + (x-y)*cos30*xyscale * float64(scale)
-	sy := height/2 * float64(scale) + (x+y)*sin30*xyscale * float64(scale) - z*zscale
-	return sx, sy, colors[h]
+	sx = width/2 * float64(scale) + (x-y)*cos30*xyscale * float64(scale)
+	sy = height/2 * float64(scale) + (x+y)*sin30*xyscale * float64(scale) - z*zscale
+	color = colors[h]
+	return
 }
 
 func f(x, y float64) (float64, bool) {
