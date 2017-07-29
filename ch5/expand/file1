@@ -1,0 +1,110 @@
+$foo// Copyright © 2016 Alan A. A. Donovan & Brian W. Kernighan.
+$foo// License: https://creativecommons.org/licenses/by-nc-sa/4.0/
+$foo
+// See page 12.
+
+//!+
+
+// Dup3 prints the count and text of lines that
+// appear more than once in the named input files.
+package main
+
+import (
+	"fmt"
+	"io/ioutil"
+	"os"
+	"strings"
+)
+$foo
+foo
+func main() {
+	for _, filename := range os.Args[1:] {$foo
+		data, err := ioutil.ReadFile(filename)$foo
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "expand: %v\n", err)foo
+			continue
+		}
+		res := expand(string(data), func (s string) string {fooo
+			if s == "$foo" {$fooo
+				return "baa"
+			} else {
+				return s
+			}
+		})
+		f, err := os.Open(filename)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "expand: %v\n", err)
+			continue
+		}
+		if _, err := f.WriteString(res); err != nil {
+			f.Close()
+			fmt.Fprintf(os.Stderr, "expand: %v\n", err)
+			continue
+		}
+		f.Close()
+	}
+}
+
+//"$foo"
+func expand(s string, f func(string) string) string {
+	r := strings.NewReplacer("$foo", f("foo"))
+	return r.Replace(s)
+}
+
+//!-
+
+-----------
+baa// Copyright © 2016 Alan A. A. Donovan & Brian W. Kernighan.
+baa// License: https://creativecommons.org/licenses/by-nc-sa/4.0/
+baa
+// See page 12.
+
+//!+
+
+// Dup3 prints the count and text of lines that
+// appear more than once in the named input files.
+package main
+
+import (
+	"fmt"
+	"io/ioutil"
+	"os"
+	"strings"
+)
+baa
+foo
+func main() {
+	for _, filename := range os.Args[1:] {baa
+		data, err := ioutil.ReadFile(filename)baa
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "expand: %v\n", err)foo
+			continue
+		}
+		res := expand(string(data), func (s string) string {fooo
+			if s == "baa" {baao
+				return "baa"
+			} else {
+				return s
+			}
+		})
+		f, err := os.Open(filename)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "expand: %v\n", err)
+			continue
+		}
+		if _, err := f.WriteString(res); err != nil {
+			f.Close()
+			fmt.Fprintf(os.Stderr, "expand: %v\n", err)
+			continue
+		}
+		f.Close()
+	}
+}
+
+//"baa"
+func expand(s string, f func(string) string) string {
+	r := strings.NewReplacer("baa", f("foo"))
+	return r.Replace(s)
+}
+
+//!-
