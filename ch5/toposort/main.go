@@ -8,7 +8,7 @@ package main
 
 import (
 	"fmt"
-	"sort"
+	// "sort"
 )
 
 //!+table
@@ -44,25 +44,41 @@ func main() {
 func topoSort(m map[string][]string) []string {
 	var order []string
 	seen := make(map[string]bool)
-	var visitAll func(items []string)
-
-	visitAll = func(items []string) {
-		for _, item := range items {
-			if !seen[item] {
-				seen[item] = true
-				visitAll(m[item])
-				order = append(order, item)
+	// var visitAll func(items []string)
+	var visitAll func(items map[string][]string)
+	visitAll = func(items map[string][]string) {
+		for key, values := range items {
+			if !seen[key] {
+				seen[key] = true
+				for _, value := range values {
+					visitAll(map[string][]string{
+							value: m[value],
+						}) 
+					if !seen[value] {
+						order = append(order, value)
+					}
+				}
+				order = append(order, key)
 			}
 		}
 	}
+	// visitAll = func(items []string) {
+	// 	for _, item := range items {
+	// 		if !seen[item] {
+	// 			seen[item] = true
+	// 			visitAll(m[item])
+	// 			order = append(order, item)
+	// 		}
+	// 	}
+	// }
 
-	var keys []string
-	for key := range m {
-		keys = append(keys, key)
-	}
-
-	sort.Strings(keys)
-	visitAll(keys)
+	// var keys []string
+	// for key := range m {
+	// 	keys = append(keys, key)
+	// }
+	// sort.Strings(keys)
+	// visitAll(keys)
+	visitAll(m)
 	return order
 }
 
