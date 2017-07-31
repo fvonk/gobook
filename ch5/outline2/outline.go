@@ -32,8 +32,39 @@ func outline(url string) error {
 		return err
 	}
 
+	var depth int
+
 	//!+call
-	forEachNode(doc, startElement, endElement)
+	forEachNode(doc, func(n *html.Node, close bool) {
+	if n.Type == html.ElementNode {
+		if len(n.Attr) > 0 {
+			var s string
+			for _, value := range n.Attr {
+				s += fmt.Sprintf("%s ", value)
+			}
+			if close {
+				fmt.Printf("%*s<%s %s/>\n", depth*2, "", n.Data, s)			
+			} else {
+				fmt.Printf("%*s<%s %s>\n", depth*2, "", n.Data, s)			
+				depth++
+			}
+		} else {
+			if close {
+				fmt.Printf("%*s<%s/>\n", depth*2, "", n.Data)
+			} else {
+				fmt.Printf("%*s<%s>\n", depth*2, "", n.Data)
+				depth++
+			}
+		}
+	} else if n.Type == html.TextNode && n.Data != "\n" {
+		fmt.Printf("%*s %s\n", depth*2, "", n.Data)
+	}
+	}, func(n *html.Node) {
+		if n.Type == html.ElementNode {
+			depth--
+			fmt.Printf("%*s</%s>\n", depth*2, "", n.Data)
+		}
+	})
 	//!-call
 
 	return nil
@@ -45,6 +76,7 @@ func outline(url string) error {
 // pre is called before the children are visited (preorder) and
 // post is called after (postorder).
 func forEachNode(n *html.Node, pre func(n *html.Node, close bool), post func(n *html.Node)) {
+
 	if pre != nil {
 		if n.FirstChild == nil {
 			pre(n, true)
@@ -69,8 +101,8 @@ func forEachNode(n *html.Node, pre func(n *html.Node, close bool), post func(n *
 //!-forEachNode
 
 //!+startend
-var depth int
 
+/*
 func startElement(n *html.Node, close bool) {
 	if n.Type == html.ElementNode {
 		if len(n.Attr) > 0 {
@@ -103,5 +135,6 @@ func endElement(n *html.Node) {
 		fmt.Printf("%*s</%s>\n", depth*2, "", n.Data)
 	}
 }
+*/
 
 //!-startend
