@@ -16,6 +16,7 @@ import (
 var prereqs = map[string][]string{
 	"algorithms": {"data structures"},
 	"calculus":   {"linear algebra"},
+	"linear algebra": {"calculus"},
 
 	"compilers": {
 		"data structures",
@@ -28,8 +29,8 @@ var prereqs = map[string][]string{
 	"discrete math":         {"intro to programming"},
 	"formal languages":      {"discrete math"},
 	"networks":              {"operating systems"},
-	"operating systems":     {"data structures", "computer organization"},
-	"programming languages": {"data structures", "computer organization"},
+	"operating systems":     {"data structures", "computer organization", "programming languages"},
+	"programming languages": {"data structures", "computer organization", "operating systems"},
 }
 
 //!-table
@@ -39,6 +40,15 @@ func main() {
 	for i, course := range topoSort(prereqs) {
 		fmt.Printf("%d:\t%s\n", i+1, course)
 	}
+}
+
+func contains(mass []string, key string) (ok bool) {
+	check := make(map[string]bool)
+	for _, v := range mass {
+		check[v] = true
+	}
+	_, ok = check[key]
+	return
 }
 
 func topoSort(m map[string][]string) []string {
@@ -51,6 +61,9 @@ func topoSort(m map[string][]string) []string {
 			if !seen[key] {
 				seen[key] = true
 				for _, value := range values {
+					if contains(m[value], key) {
+						fmt.Printf("cycle: %s and %s\n", key, value)
+					}
 					visitAll(map[string][]string{
 							value: m[value],
 						}) 
