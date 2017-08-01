@@ -36,10 +36,20 @@ func min(val int, vals ...int) int {
 	return min
 }
 
+func join(val string, vals ...string) string {
+	join := val
+	for _, val := range vals {
+		join += val
+	}
+	return join
+}
+
 //!-
 
 func main() {
 	//!+main
+	fmt.Println(join("asdf", "zxcv", "1", "2", "3"))
+
 	fmt.Println(sum())           //  "0"
 	fmt.Println(sum(3))          //  "3"
 	fmt.Println(sum(1, 2, 3, 4)) //  "10"
