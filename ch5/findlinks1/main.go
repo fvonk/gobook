@@ -21,10 +21,31 @@ func main() {
 		os.Exit(1)
 	}
 	
-	visitRec(doc)
+	// visitRec(doc)
+	res := ElementsByTagName(doc, "img")
+	fmt.Printf("res = %s\n", res)
 }
 
 //!-main
+func contains(mass []string, key string) (ok bool) {
+	check := make(map[string]bool)
+	for _, v := range mass {
+		check[v] = true
+	}
+	_, ok = check[key]
+	return
+}
+
+func ElementsByTagName(n *html.Node, names ...string) []*html.Node {
+	var res []*html.Node
+	if contains(names, n.Data) {
+		res = append(res, n)
+	}
+	for c := n.FirstChild; c != nil; c = c.NextSibling {
+		ElementsByTagName(c, names...)
+	}
+	return res
+}
 
 //!+visit
 // visit appends to links each link found in n and returns the result.

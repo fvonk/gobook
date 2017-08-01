@@ -31,7 +31,33 @@ func main() {
 	//     fmt.Println("error:", err)
 	// }
 	// fmt.Println(string(b))
-	findTexts(doc)
+
+	// findTexts(doc)
+	res := ElementsByTagName(doc, "input")
+	for _, r := range res {
+		fmt.Printf("%s\n", r.Attr)
+	}
+}
+
+func contains(mass []string, key string) (ok bool) {
+	check := make(map[string]bool)
+	for _, v := range mass {
+		check[v] = true
+	}
+	_, ok = check[key]
+	return
+}
+
+var result []*html.Node
+func ElementsByTagName(n *html.Node, names ...string) []*html.Node {
+	if contains(names, n.Data) {
+		result = append(result, n)
+	}
+	for c := n.FirstChild; c != nil; c = c.NextSibling {
+		// fmt.Printf("c %s\n", c.Data)
+		ElementsByTagName(c, names...)
+	}
+	return result
 }
 
 func outline(stack []string, n *html.Node) {

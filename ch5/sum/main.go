@@ -19,6 +19,7 @@ func sum(vals ...int) int {
 
 func max(val int, vals ...int) int {
 	max := val
+	fmt.Printf("%T\n", vals)
 	for _, val := range vals {
 		if val > max {
 			max = val
