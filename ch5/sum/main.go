@@ -17,6 +17,25 @@ func sum(vals ...int) int {
 	return total
 }
 
+func max(val int, vals ...int) int {
+	max := val
+	for _, val := range vals {
+		if val > max {
+			max = val
+		}
+	}
+	return max
+}
+func min(val int, vals ...int) int {
+	min := val
+	for _, val := range vals {
+		if val < min {
+			min = val
+		}
+	}
+	return min
+}
+
 //!-
 
 func main() {
@@ -24,6 +43,9 @@ func main() {
 	fmt.Println(sum())           //  "0"
 	fmt.Println(sum(3))          //  "3"
 	fmt.Println(sum(1, 2, 3, 4)) //  "10"
+	fmt.Println(max(1, 7, 3, 4)) 
+	fmt.Println(max(1, 4, -4)) 
+	fmt.Println(min(1, 7, 3, 4)) 
 	//!-main
 
 	//!+slice
