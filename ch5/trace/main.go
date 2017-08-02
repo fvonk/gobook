@@ -9,13 +9,18 @@ package main
 import (
 	"log"
 	"time"
+	"fmt"
 )
 
 //!+main
 func bigSlowOperation() {
-	defer trace("bigSlowOperation")() // don't forget the extra parentheses
+	fmt.Println("1")
+	defer func() {
+		trace("bigSlowOperation")() // don't forget the extra parentheses
+	}
+	fmt.Println("2")
 	// ...lots of work...
-	time.Sleep(10 * time.Second) // simulate slow operation by sleeping
+	time.Sleep(5 * time.Second) // simulate slow operation by sleeping
 }
 
 func trace(msg string) func() {
