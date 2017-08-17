@@ -69,5 +69,39 @@ func (s *IntSet) String() string {
 	buf.WriteByte('}')
 	return buf.String()
 }
-
 //!-string
+
+func (s *IntSet) Len() int {
+	var length int
+	for _, word := range s.words {
+		if word == 0 {
+			continue
+		}
+		for j := 0; j < 64; j++ {
+			if word&(1<<uint(j)) != 0 {
+				length++
+			}
+		}
+	}
+	return length
+}
+
+func (s *IntSet) Remove(x int) {
+	word, bit := x/64, uint(x%64)
+	s.words[word] = s.words[word]&^(1<<bit)
+}
+
+func (s *IntSet) Clear() {
+	for i, _ := range s.words {
+		s.words[i] &= 0 
+	}
+}
+
+func (s *IntSet) Copy() *IntSet {
+	// var result = &IntSet{make([]uint64, 0)}
+	var result = new(IntSet)
+	for i := 0; i < len(s.words); i++ {
+		result.words = append(result.words, s.words[i])
+	}
+	return result
+}
