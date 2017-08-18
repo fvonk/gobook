@@ -110,3 +110,39 @@ func Example_four() {
 	// {1 2 3}
 	// {1 2 3 7 9}
 }
+
+func Example_five() {
+	var x, y IntSet
+	x.AddAll(1, 2, 3, 7, 9, 12)
+	y.AddAll(1, 3, 12, 14, 22, 55, 56)
+	x.IntersectWith(&y)
+	fmt.Println(x.String())
+
+	x.Clear()
+	x.AddAll(1, 2, 3, 7, 9, 12)
+	x.SymmetricDifferenceWith(&y)
+	fmt.Println(x.String())
+	x.Clear()
+	x.AddAll(100, 14, 55)
+	x.SymmetricDifferenceWith(&y)
+	fmt.Println(x.String())
+	x.SymmetricDifferenceWith(&y)
+	fmt.Println(x.String())
+	x.Clear()
+	x.AddAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
+	x.SymmetricDifferenceWith(&y)
+	fmt.Println(x.String())
+
+	x.Clear()
+	x.AddAll(1, 2, 3, 7, 9, 12)
+	x.DifferenceWith(&y)
+	fmt.Println(x.String())
+
+	// Output:
+	// {1 3 12}
+	// {2 7 9 14 22 55 56}
+	// {1 3 12 22 56 100}
+	// {14 55 100}
+	// {2 4 5 6 7 8 9 10 11 13 22 55 56}
+	// {2 7 9}
+}

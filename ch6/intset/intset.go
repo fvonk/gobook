@@ -44,8 +44,36 @@ func (s *IntSet) UnionWith(t *IntSet) {
 		}
 	}
 }
-
 //!-intset
+
+//intersect
+func (s *IntSet) IntersectWith(t *IntSet) {
+	for i, tword := range t.words {
+		if i < len(s.words) {
+			s.words[i] &= tword
+		}
+	}
+}
+
+//symmetricDifference (differ only in receiver values)
+func (s *IntSet) SymmetricDifferenceWith(t *IntSet) {
+	for i, tword := range t.words {
+		if i < len(s.words) {
+			s.words[i] ^= tword
+		} else {
+			s.words = append(s.words, tword)
+		}
+	}
+}
+
+//difference (common differ values)
+func (s *IntSet) DifferenceWith(t *IntSet) {
+	for i, tword := range t.words {
+		if i < len(s.words) {
+			s.words[i] &^= tword
+		}
+	}
+}
 
 //!+string
 
