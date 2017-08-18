@@ -19,6 +19,21 @@ type IntSet struct {
 	words []uint64
 }
 
+func (s *IntSet) Elems() []uint64 {
+	var result = make([]uint64, 0, 0)
+	for i, word := range s.words {
+		if word == 0 {
+			continue
+		}
+		for j := 0; j < 64; j++ {
+			if word&(1<<uint(j)) != 0 {
+				result = append(result, uint64(i * 64 + j))
+			}
+		}
+	}
+	return result
+}
+
 // Has reports whether the set contains the non-negative value x.
 func (s *IntSet) Has(x int) bool {
 	word, bit := x/64, uint(x%64)

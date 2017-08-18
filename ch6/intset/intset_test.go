@@ -113,8 +113,8 @@ func Example_four() {
 
 func Example_five() {
 	var x, y IntSet
-	x.AddAll(1, 2, 3, 7, 9, 12)
-	y.AddAll(1, 3, 12, 14, 22, 55, 56)
+	x.AddAll(1, 2, 3, 7, 9, 12, 125)
+	y.AddAll(1, 3, 12, 14, 22, 55, 56, 125)
 	x.IntersectWith(&y)
 	fmt.Println(x.String())
 
@@ -139,10 +139,19 @@ func Example_five() {
 	fmt.Println(x.String())
 
 	// Output:
-	// {1 3 12}
-	// {2 7 9 14 22 55 56}
-	// {1 3 12 22 56 100}
+	// {1 3 12 125}
+	// {2 7 9 14 22 55 56 125}
+	// {1 3 12 22 56 100 125}
 	// {14 55 100}
-	// {2 4 5 6 7 8 9 10 11 13 22 55 56}
+	// {2 4 5 6 7 8 9 10 11 13 22 55 56 125}
 	// {2 7 9}
+}
+
+func Example_six() {
+	var x IntSet
+	x.AddAll(1, 2, 5, 7, 8, 9, 66, 125)
+	fmt.Println(x.Elems())
+
+	// Output:
+	// [1 2 5 7 8 9 66 125]
 }
