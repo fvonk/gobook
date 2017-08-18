@@ -98,3 +98,15 @@ func Example_three() {
 	// {}
 	// {1 4 10}
 }
+
+func Example_four() {
+	var x IntSet
+	x.AddAll(1, 2, 3)
+	fmt.Println(x.String())
+	x.AddAll(9, 2, 7)
+	fmt.Println(x.String())
+
+	// Output:
+	// {1 2 3}
+	// {1 2 3 7 9}
+}

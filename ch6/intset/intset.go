@@ -105,3 +105,9 @@ func (s *IntSet) Copy() *IntSet {
 	}
 	return result
 }
+
+func (s *IntSet) AddAll(vals...int) {
+	for _, val := range vals {
+		s.Add(val)
+	}
+}
