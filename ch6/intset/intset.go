@@ -16,18 +16,20 @@ import (
 // An IntSet is a set of small non-negative integers.
 // Its zero value represents the empty set.
 type IntSet struct {
-	words []uint64
+	words []uint
 }
 
-func (s *IntSet) Elems() []uint64 {
-	var result = make([]uint64, 0, 0)
+const intSize = 32<<((^uint(0)>>63))
+
+func (s *IntSet) Elems() []uint {
+	var result = make([]uint, 0, 0)
 	for i, word := range s.words {
 		if word == 0 {
 			continue
 		}
-		for j := 0; j < 64; j++ {
+		for j := 0; j < intSize; j++ {
 			if word&(1<<uint(j)) != 0 {
-				result = append(result, uint64(i * 64 + j))
+				result = append(result, uint(i * intSize + j))
 			}
 		}
 	}
@@ -36,13 +38,13 @@ func (s *IntSet) Elems() []uint64 {
 
 // Has reports whether the set contains the non-negative value x.
 func (s *IntSet) Has(x int) bool {
-	word, bit := x/64, uint(x%64)
+	word, bit := x/intSize, uint(x%intSize)
 	return word < len(s.words) && s.words[word]&(1<<bit) != 0
 }
 
 // Add adds the non-negative value x to the set.
 func (s *IntSet) Add(x int) {
-	word, bit := x/64, uint(x%64)
+	word, bit := x/intSize, uint(x%intSize)
 	for word >= len(s.words) {
 		s.words = append(s.words, 0)
 	}
@@ -100,12 +102,12 @@ func (s *IntSet) String() string {
 		if word == 0 {
 			continue
 		}
-		for j := 0; j < 64; j++ {
+		for j := 0; j < intSize; j++ {
 			if word&(1<<uint(j)) != 0 {
 				if buf.Len() > len("{") {
 					buf.WriteByte(' ')
 				}
-				fmt.Fprintf(&buf, "%d", 64*i+j)
+				fmt.Fprintf(&buf, "%d", intSize*i+j)
 			}
 		}
 	}
@@ -120,7 +122,7 @@ func (s *IntSet) Len() int {
 		if word == 0 {
 			continue
 		}
-		for j := 0; j < 64; j++ {
+		for j := 0; j < intSize; j++ {
 			if word&(1<<uint(j)) != 0 {
 				length++
 			}
@@ -130,7 +132,7 @@ func (s *IntSet) Len() int {
 }
 
 func (s *IntSet) Remove(x int) {
-	word, bit := x/64, uint(x%64)
+	word, bit := x/intSize, uint(x%intSize)
 	s.words[word] = s.words[word]&^(1<<bit)
 }
 
@@ -141,7 +143,7 @@ func (s *IntSet) Clear() {
 }
 
 func (s *IntSet) Copy() *IntSet {
-	// var result = &IntSet{make([]uint64, 0)}
+	// var result = &IntSet{make([]uint, 0)}
 	var result = new(IntSet)
 	for i := 0; i < len(s.words); i++ {
 		result.words = append(result.words, s.words[i])

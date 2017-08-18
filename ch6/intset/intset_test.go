@@ -151,7 +151,6 @@ func Example_six() {
 	var x IntSet
 	x.AddAll(1, 2, 5, 7, 8, 9, 66, 125)
 	fmt.Println(x.Elems())
-
 	// Output:
 	// [1 2 5 7 8 9 66 125]
 }
