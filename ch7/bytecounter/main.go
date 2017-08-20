@@ -10,6 +10,8 @@ import (
 	"fmt"
 	"bufio"
 	"strings"
+	"io"
+	"bytes"
 )
 
 //!+bytecounter
@@ -26,9 +28,7 @@ func (c *ByteCounter) Write(p []byte) (int, error) {
 type WordCounter int
 
 func (c *WordCounter) Write(p []byte) (int, error) {
-	str := string(p)
-	fmt.Println(str)
-	scanner := bufio.NewScanner(strings.NewReader(str))
+	scanner := bufio.NewScanner(bytes.NewReader(p))
 	scanner.Split(bufio.ScanWords)
 	count := 0
 	for scanner.Scan() {
@@ -59,9 +59,28 @@ func (c *LineCounter ) Write(p []byte) (int, error) {
 	return len(p), nil
 }
 
+type countingWriter struct {
+	count *int64
+	writer io.Writer
+}
+
+func (w countingWriter) Write(p []byte) (int, error) {
+	res, err := w.writer.Write(p)
+	if err == nil {
+		*w.count += int64(res)
+	}
+	return res, err
+}
+
+func CountingWriter(w io.Writer) (io.Writer, *int64) {
+	var counter int64
+	var result = countingWriter{&counter, w}
+	return result, result.count
+}
+
 func main() {
 	//!+main
-	var c LineCounter
+	var c WordCounter
 	c.Write([]byte("asd"))
 	fmt.Println(c) // "5", = len("hello")
 
