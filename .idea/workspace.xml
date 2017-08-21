@@ -2,197 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b6f456e-b937-4931-a959-3bd5e4503659" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/GOPATH__gobook_.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch1/dup1/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch1/dup2/file1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch1/dup2/file2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch1/dup2/file3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch1/dup2/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch1/dup3/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch1/echo1/main" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch1/echo1/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch1/echo2/main" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch1/echo2/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch1/echo3/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch1/fetch/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch1/fetchall/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch1/fetchall/results" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch1/helloworld/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch1/lissajous/lissajous" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch1/lissajous/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch1/lissajous/out.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch1/server1/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch1/server2/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch1/server3/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch10/cross/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch10/jpeg/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch11/echo/echo.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch11/echo/echo_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch11/storage1/storage.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch11/storage2/quota_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch11/storage2/storage.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch11/word1/word.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch11/word1/word_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch11/word2/word.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch11/word2/word_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch12/display/display.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch12/display/display_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch12/format/format.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch12/format/format_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch12/methods/methods.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch12/methods/methods_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch12/params/params.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch12/search/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch12/sexpr/decode.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch12/sexpr/encode.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch12/sexpr/pretty.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch12/sexpr/sexpr_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch13/bzip-print/bzip2.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch13/bzip-print/bzip2.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch13/bzip-print/bzip2_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch13/bzip/bzip2.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch13/bzip/bzip2.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch13/bzip/bzip2_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch13/bzipper/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch13/equal/equal.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch13/equal/equal_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch13/unsafeptr/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch2/boiling/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch2/cf/cf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch2/cf/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch2/echo4/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch2/ftoc/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch2/popcount/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch2/popcount/popcount_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch2/tempconv/conv.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch2/tempconv/tempconv.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch2/tempconv0/celsius.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch2/tempconv0/tempconv_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch3/anagram/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch3/basename1/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch3/basename2/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch3/comma/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch3/mandelbrot/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch3/netflag/netflag.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch3/printints/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch3/surface/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch4/append/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch4/autoescape/iss.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch4/autoescape/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch4/charcount/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch4/charcount/read" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch4/dedup/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch4/embed/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch4/github/github.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch4/github/search.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch4/graph/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch4/issues/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch4/issueshtml/issues.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch4/issueshtml/issues2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch4/issueshtml/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch4/issuesreport/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch4/movie/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch4/nonempty/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch4/rev/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch4/sha256/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch4/treesort/sort.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch4/treesort/sort_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch5/defer1/defer.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch5/defer2/defer.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch5/expand/file1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch5/expand/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch5/fetch/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch5/fetch/pkg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch5/findlinks1/fetch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch5/findlinks1/findlinks1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch5/findlinks1/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch5/findlinks2/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch5/findlinks3/findlinks.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch5/links/links.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch5/outline/fetch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch5/outline/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch5/outline/outline" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch5/outline2/outline.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch5/squares/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch5/sum/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch5/title1/title.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch5/title2/title.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch5/title3/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch5/title3/title.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch5/toposort/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch5/trace/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch5/wait/wait.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch6/coloredpoint/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch6/geometry/geometry.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch6/intset/intset.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch6/intset/intset_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch6/urlvalues/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch7/bytecounter/LimitReader.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch7/bytecounter/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch7/eval/ast.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch7/eval/check.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch7/eval/coverage_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch7/eval/eval.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch7/eval/eval_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch7/eval/parse.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch7/eval/print.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch7/http1/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch7/http2/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch7/http3/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch7/http3a/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch7/http4/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch7/sleep/sleep.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch7/sorting/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch7/surface/surface.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch7/tempconv/tempconv.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch7/tempflag/tempflag.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch7/xmlselect/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/cake/cake.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/cake/cake_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/chat/chat.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/clock1/clock.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/clock2/clock.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/countdown1/countdown.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/countdown2/countdown.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/countdown3/countdown.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/crawl1/findlinks.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/crawl2/findlinks.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/crawl3/findlinks.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/du1/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/du2/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/du3/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/du4/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/netcat1/netcat.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/netcat2/netcat.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/netcat3/netcat.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/pipeline1/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/pipeline2/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/pipeline3/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/reverb1/reverb.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/reverb2/reverb.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/spinner/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/thumbnail/main.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/thumbnail/thumbnail.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch8/thumbnail/thumbnail_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch9/bank1/bank.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch9/bank1/bank_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch9/bank2/bank.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch9/bank2/bank_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch9/bank3/bank.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch9/bank3/bank_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch9/memo1/memo.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch9/memo1/memo_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch9/memo2/memo.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch9/memo2/memo_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch9/memo3/memo.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch9/memo3/memo_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch9/memo4/memo.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch9/memo4/memo_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch9/memo5/memo.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch9/memo5/memo_test.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ch9/memotest/memotest.go" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gobook.iml" afterPath="$PROJECT_DIR$/.idea/gobook.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch7/tempconv/tempconv.go" afterPath="$PROJECT_DIR$/src/ch7/tempconv/tempconv.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -207,9 +18,23 @@
       <file leaf-file-name="tempconv.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ch7/tempconv/tempconv.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="28" column="24" lean-forward="false" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
-              <folding />
+            <state relative-caret-position="570">
+              <caret line="54" column="1" lean-forward="true" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+              <folding>
+                <element signature="e#239#280#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tempflag.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ch7/tempflag/tempflag.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding>
+                <element signature="e#219#261#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -228,6 +53,7 @@
       <find>LimitReader</find>
       <find>lastRuneSize</find>
       <find>&quot;gobook/</find>
+      <find>celsiusFlag</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -246,6 +72,7 @@
         <option value="$PROJECT_DIR$/ch7/sleep/sleep.go" />
         <option value="$PROJECT_DIR$/ch7/tempflag/tempflag.go" />
         <option value="$PROJECT_DIR$/src/ch7/tempflag/tempflag.go" />
+        <option value="$PROJECT_DIR$/src/ch7/tempconv/tempconv.go" />
       </list>
     </option>
   </component>
@@ -276,8 +103,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -408,17 +234,58 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ch2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gobook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gobook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ch2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tempconv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gobook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gobook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
   </component>
@@ -434,7 +301,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Go Single File.go run tempflag.go">
+    <configuration default="false" name="go run tempflag.go" type="GoRunFileConfiguration" factoryName="Go Single File" temporary="true">
+      <module name="gobook" />
+      <working_directory value="$PROJECT_DIR$" />
+      <parameters value="-temp 25K" />
+      <filePath value="$PROJECT_DIR$/src/ch7/tempflag/tempflag.go" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -716,6 +590,14 @@
       <envs />
       <method />
     </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Go Single File.go run tempflag.go" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Go Single File.go run tempflag.go" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SbtLocalSettings">
     <option name="externalProjectsViewState">
@@ -749,22 +631,24 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="339" y="174" width="1829" height="1129" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297975" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22854388" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22854388" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.243973" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21488528" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21712367" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24958031" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -775,7 +659,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="220" y="123" width="1303" height="803" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -795,52 +678,32 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ch4/issuesreport/main.go">
+    <entry file="file://$PROJECT_DIR$/src/ch7/tempconv/tempconv.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#239#280#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ch4/issueshtml/main.go">
+    <entry file="file://$PROJECT_DIR$/src/ch7/tempflag/tempflag.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="180">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="e#219#261#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ch2/popcount/popcount_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="15" lean-forward="false" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ch7/tempconv/tempconv.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ch7/bytecounter/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ch7/bytecounter/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="64" column="1" lean-forward="true" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ch4/issuesreport/main.go" />
+    <entry file="file://$PROJECT_DIR$/ch4/issueshtml/main.go" />
+    <entry file="file://$PROJECT_DIR$/ch2/popcount/popcount_test.go" />
+    <entry file="file://$PROJECT_DIR$/ch7/tempconv/tempconv.go" />
+    <entry file="file://$PROJECT_DIR$/ch7/bytecounter/main.go" />
+    <entry file="file://$PROJECT_DIR$/ch7/bytecounter/main.go" />
     <entry file="file:///usr/local/go/src/io/io.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1395">
@@ -848,20 +711,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ch7/bytecounter/LimitReader.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="25" lean-forward="false" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ch7/bytecounter/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ch7/bytecounter/LimitReader.go" />
+    <entry file="file://$PROJECT_DIR$/ch7/bytecounter/main.go" />
     <entry file="file:///usr/local/go/src/runtime/panic.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
@@ -883,20 +734,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ch7/bytecounter/LimitReader.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ch7/bytecounter/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="61" column="27" lean-forward="false" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ch7/bytecounter/LimitReader.go" />
+    <entry file="file://$PROJECT_DIR$/ch7/bytecounter/main.go" />
     <entry file="file:///usr/local/go/src/bufio/bufio.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -904,66 +743,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ch7/sleep/sleep.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ch7/tempconv/tempconv.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ch4/issueshtml/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ch2/popcount/popcount_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="15" lean-forward="false" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ch5/links/links.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ch5/findlinks3/findlinks.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ch7/tempflag/tempflag.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="1" lean-forward="false" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ch4/issuesreport/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="15" column="8" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ch7/sleep/sleep.go" />
+    <entry file="file://$PROJECT_DIR$/ch7/tempconv/tempconv.go" />
+    <entry file="file://$PROJECT_DIR$/ch4/issueshtml/main.go" />
+    <entry file="file://$PROJECT_DIR$/ch2/popcount/popcount_test.go" />
+    <entry file="file://$PROJECT_DIR$/ch5/links/links.go" />
+    <entry file="file://$PROJECT_DIR$/ch5/findlinks3/findlinks.go" />
+    <entry file="file://$PROJECT_DIR$/ch7/tempflag/tempflag.go" />
+    <entry file="file://$PROJECT_DIR$/ch4/issuesreport/main.go" />
     <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -974,19 +761,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ch7/tempflag/tempflag.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
             <element signature="e#219#261#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch2/tempconv/tempconv.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+          <folding>
+            <element signature="e#214#226#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch2/tempconv/conv.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ch7/tempconv/tempconv.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="28" column="24" lean-forward="false" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
-          <folding />
+        <state relative-caret-position="570">
+          <caret line="54" column="1" lean-forward="true" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+          <folding>
+            <element signature="e#239#280#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

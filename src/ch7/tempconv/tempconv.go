@@ -9,6 +9,7 @@ package tempconv
 import (
 	"flag"
 	"fmt"
+	"ch2/tempconv"
 )
 
 type Celsius float64
@@ -45,6 +46,9 @@ func (f *celsiusFlag) Set(s string) error {
 		return nil
 	case "F", "°F":
 		f.Celsius = FToC(Fahrenheit(value))
+		return nil
+	case "K", "°K":
+		f.Celsius = Celsius(tempconv.KToC(tempconv.Kelvin(value)))
 		return nil
 	}
 	return fmt.Errorf("invalid temperature %q", s)
