@@ -12,6 +12,7 @@ import (
 	"log"
 	"net/http"
 	"strconv"
+	"html/template"
 )
 
 //!+main
@@ -35,9 +36,36 @@ func (d dollars) String() string { return fmt.Sprintf("$%.2f", d) }
 type database map[string]dollars
 
 func (db database) list(w http.ResponseWriter, req *http.Request) {
-	for item, price := range db {
-		fmt.Fprintf(w, "%s: %s\n", item, price)
+	count := 0
+	var itemList = template.Must(template.New("itemlist").Funcs(template.FuncMap{
+		"next": func() int {
+			count++
+			return count
+		},
+	}).Parse(`
+	<h1>{{.TotalCount}} Items</h1>
+	<table>
+	<tr style='text-align: right'>
+	  <th>#</th>
+	  <th>Item</th>
+	  <th>Price</th>
+	</tr>
+	{{range $key, $value := . }}
+	<tr>
+	  <td>{{ next }}</td>
+	  <td>{{ $key }}</td>
+	  <td>{{ $value }}</td>
+	</tr>
+	{{end}}
+	</table>
+	`))
+
+	if err := itemList.Execute(w, db); err != nil {
+		log.Fatal(err)
 	}
+	//for item, price := range db {
+		//fmt.Fprintf(w, "%s: %s\n", item, price)
+	//}
 }
 
 func (db database) price(w http.ResponseWriter, req *http.Request) {
