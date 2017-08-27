@@ -26,6 +26,7 @@ func TestEval(t *testing.T) {
 		// additional tests that don't appear in the book
 		{"-1 + -x", Env{"x": 1}, "-2"},
 		{"-1 - x", Env{"x": 1}, "-2"},
+		{"min(x,y)", Env{"x": 1, "y": 2}, "1"},
 		//!+Eval
 	}
 	var prevExpr string
@@ -117,6 +118,7 @@ func TestPrintOut(t *testing.T) {
 		{"pow(1, 1)", "pow(1, 1)"},
 		{"sin(x+y)", "sin(x+y)"},
 		{"pow(x, y)", "pow(x, y)"},
+		{"min(x,y)", "min(x, y)"},
 	} {
 		expr, err := Parse(test.expr)
 		if err == nil {

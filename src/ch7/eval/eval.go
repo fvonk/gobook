@@ -57,6 +57,8 @@ func (b binary) Eval(env Env) float64 {
 
 func (c call) Eval(env Env) float64 {
 	switch c.fn {
+	case "min":
+		return math.Min(c.args[0].Eval(env), c.args[1].Eval(env))
 	case "pow":
 		return math.Pow(c.args[0].Eval(env), c.args[1].Eval(env))
 	case "sin":

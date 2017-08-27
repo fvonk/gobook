@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b6f456e-b937-4931-a959-3bd5e4503659" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch7/eval/coverage_test.go" afterPath="$PROJECT_DIR$/src/ch7/eval/coverage_test.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch7/eval/check.go" afterPath="$PROJECT_DIR$/src/ch7/eval/check.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch7/eval/eval.go" afterPath="$PROJECT_DIR$/src/ch7/eval/eval.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch7/eval/eval_test.go" afterPath="$PROJECT_DIR$/src/ch7/eval/eval_test.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch7/eval/string.go" afterPath="$PROJECT_DIR$/src/ch7/eval/string.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ch7/surface/surface.go" afterPath="$PROJECT_DIR$/src/ch7/surface/surface.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,107 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="signal_unix.go" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/go/src/runtime/signal_unix.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4155">
-              <caret line="280" column="17" lean-forward="false" selection-start-line="280" selection-start-column="17" selection-end-line="280" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="context.go" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/go/src/context/context.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="231" column="0" lean-forward="false" selection-start-line="231" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="surface.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ch7/surface/surface.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="70" column="30" lean-forward="false" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
-              <folding>
-                <element signature="e#231#329#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="request.go" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/go/src/net/http/request.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="1145" column="18" lean-forward="false" selection-start-line="1145" selection-start-column="18" selection-end-line="1145" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="parse.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ch7/eval/parse.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="58" column="5" lean-forward="false" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="string.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ch7/eval/string.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="52" lean-forward="true" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
-              <folding>
-                <element signature="e#64#92#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="coverage_test.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ch7/eval/coverage_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="30" column="31" lean-forward="true" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-              <folding>
-                <element signature="e#139#175#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="eval_test.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ch7/eval/eval_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="118" column="43" lean-forward="false" selection-start-line="118" selection-start-column="43" selection-end-line="118" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ast.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ch7/eval/ast.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
-              <caret line="37" column="8" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="check.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="check.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ch7/eval/check.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="43" column="31" lean-forward="false" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="31" />
+            <state relative-caret-position="560">
+              <caret line="55" column="45" lean-forward="false" selection-start-line="55" selection-start-column="42" selection-end-line="55" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -140,8 +44,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>html/templ</find>
-      <find>html/templa</find>
       <find>html/template</find>
       <find>template</find>
       <find>issueList</find>
@@ -153,7 +55,6 @@
       <find>import int</find>
       <find>import ints</find>
       <find>import intse</find>
-      <find>pow</find>
       <find>Eval</find>
       <find>precedence</find>
       <find>f</find>
@@ -170,6 +71,9 @@
       <find>:</find>
       <find>x:</find>
       <find>x:12</find>
+      <find>call</find>
+      <find>bina</find>
+      <find>pow</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -193,9 +97,10 @@
         <option value="$PROJECT_DIR$/src/ch7/sorting/main.go" />
         <option value="$PROJECT_DIR$/src/ch7/http4/main.go" />
         <option value="$PROJECT_DIR$/src/ch7/eval/ast.go" />
-        <option value="$PROJECT_DIR$/src/ch7/eval/eval.go" />
         <option value="$PROJECT_DIR$/src/ch7/surface/surface.go" />
         <option value="$PROJECT_DIR$/src/ch7/eval/coverage_test.go" />
+        <option value="$PROJECT_DIR$/src/ch7/eval/eval.go" />
+        <option value="$PROJECT_DIR$/src/ch7/eval/check.go" />
         <option value="$PROJECT_DIR$/src/ch7/eval/string.go" />
         <option value="$PROJECT_DIR$/src/ch7/eval/eval_test.go" />
       </list>
@@ -1054,13 +959,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch7/eval/print.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="33" column="31" lean-forward="false" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/go/src/runtime/stack.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -1106,16 +1004,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch7/eval/eval.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-          <folding>
-            <element signature="e#207#232#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/go/src/runtime/panic.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8445">
@@ -1140,14 +1028,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch7/eval/parse.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="58" column="5" lean-forward="false" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ch7/surface/surface.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
@@ -1158,17 +1038,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch7/eval/check.go">
+    <entry file="file://$PROJECT_DIR$/src/ch7/eval/eval.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="43" column="31" lean-forward="false" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="31" />
+        <state relative-caret-position="440">
+          <caret line="61" column="17" lean-forward="false" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="17" />
+          <folding>
+            <element signature="e#207#232#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch7/eval/print.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="33" column="31" lean-forward="false" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch7/eval/string.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="24" lean-forward="false" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+          <folding>
+            <element signature="e#64#92#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ch7/eval/coverage_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
+        <state relative-caret-position="298">
           <caret line="30" column="31" lean-forward="true" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
           <folding>
             <element signature="e#139#175#0" expanded="true" />
@@ -1176,28 +1076,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch7/eval/ast.go">
+    <entry file="file://$PROJECT_DIR$/src/ch7/eval/parse.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="37" column="8" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+        <state relative-caret-position="340">
+          <caret line="85" column="43" lean-forward="true" selection-start-line="85" selection-start-column="43" selection-end-line="85" selection-end-column="43" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ch7/eval/string.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="52" lean-forward="true" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
-          <folding>
-            <element signature="e#64#92#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ch7/eval/eval_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="118" column="43" lean-forward="false" selection-start-line="118" selection-start-column="43" selection-end-line="118" selection-end-column="43" />
+        <state relative-caret-position="865">
+          <caret line="117" column="22" lean-forward="false" selection-start-line="117" selection-start-column="22" selection-end-line="117" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch7/eval/ast.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="37" column="50" lean-forward="true" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch7/eval/check.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="55" column="45" lean-forward="false" selection-start-line="55" selection-start-column="42" selection-end-line="55" selection-end-column="45" />
           <folding />
         </state>
       </provider>

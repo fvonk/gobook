@@ -25,7 +25,7 @@ func (b binary) String() string {
 
 func (c call) String() string {
 	switch c.fn {
-	case "pow":
+	case "pow", "min":
 		return fmt.Sprintf("%v(%v, %v)", c.fn, c.args[0].String(), c.args[1].String())
 	case "sin", "sqrt":
 		return fmt.Sprintf("%v(%v)", c.fn, c.args[0].String())
