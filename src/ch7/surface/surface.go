@@ -94,6 +94,7 @@ func plot(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "bad expr: "+err.Error(), http.StatusBadRequest)
 		return
 	}
+	fmt.Println(expr)
 	w.Header().Set("Content-Type", "image/svg+xml")
 	surface(w, func(x, y float64) float64 {
 		r := math.Hypot(x, y) // distance from (0,0)

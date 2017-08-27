@@ -23,6 +23,7 @@ func TestCoverage(t *testing.T) {
 		{"sqrt(A / pi)", Env{"A": 87616, "pi": math.Pi}, "167"},
 		{"pow(x, 3) + pow(y, 3)", Env{"x": 9, "y": 10}, "1729"},
 		{"5 / 9 * (F - 32)", Env{"F": -40}, "-40"},
+		{"pow(x, 2) + pow(y, 2)", Env{"x": 2, "y": 2}, "8"},
 	}
 
 	for _, test := range tests {
@@ -44,5 +45,8 @@ func TestCoverage(t *testing.T) {
 		}
 	}
 }
+
+//func TestCoverage2(t *testing.T) {
+//}
 
 //!-TestCoverage

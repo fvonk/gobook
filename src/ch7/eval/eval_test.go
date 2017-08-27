@@ -111,3 +111,27 @@ log(10)             unknown function "log"
 sqrt(1, 2)          call to sqrt has 2 args, want 1
 //!-errors
 */
+
+func TestPrintOut(t *testing.T) {
+	for _, test := range []struct{ expr, wantStr string }{
+		{"pow(1, 1)", "pow(1, 1)"},
+		{"sin(x+y)", "sin(x+y)"},
+		{"pow(x, y)", "pow(x, y)"},
+	} {
+		expr, err := Parse(test.expr)
+		if err == nil {
+			vars := make(map[Var]bool)
+			err = expr.Check(vars)
+			if err == nil {
+			//	t.Errorf("unexpected success: %s", test.expr)
+				if expr.String() != test.wantStr {
+					t.Errorf("got %s, want %s", expr.String(), test.wantStr)
+				}
+				continue
+			}
+		}
+		if err.Error() != test.wantStr {
+			t.Errorf("got error %s, want %s", err, test.wantStr)
+		}
+	}
+}
