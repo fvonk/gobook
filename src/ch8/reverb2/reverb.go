@@ -13,21 +13,29 @@ import (
 	"net"
 	"strings"
 	"time"
+	"os"
 )
 
-func echo(c net.Conn, shout string, delay time.Duration) {
+func echo(c net.Conn, shout string, delay time.Duration, done chan bool) {
 	fmt.Fprintln(c, "\t", strings.ToUpper(shout))
+	fmt.Fprintln(os.Stdout, "\t", strings.ToUpper(shout))
 	time.Sleep(delay)
 	fmt.Fprintln(c, "\t", shout)
+	fmt.Fprintln(os.Stdout, "\t", shout)
 	time.Sleep(delay)
 	fmt.Fprintln(c, "\t", strings.ToLower(shout))
+	fmt.Fprintln(os.Stdout, "\t", strings.ToLower(shout))
+
+	done <- true
 }
 
 //!+
 func handleConn(c net.Conn) {
 	input := bufio.NewScanner(c)
 	for input.Scan() {
-		go echo(c, input.Text(), 1*time.Second)
+		done := make(chan bool)
+		go echo(c, input.Text(), 1*time.Second, done)
+		<-done
 	}
 	// NOTE: ignoring potential errors from input.Err()
 	c.Close()

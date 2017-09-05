@@ -26,7 +26,10 @@ func main() {
 		done <- struct{}{} // signal the main goroutine
 	}()
 	mustCopy(conn, os.Stdin)
-	conn.Close()
+	//conn.Close()
+	if err := conn.(*net.TCPConn).CloseWrite(); err != nil {
+		panic(1)
+	}
 	<-done // wait for background goroutine to finish
 }
 

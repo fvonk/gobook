@@ -13,15 +13,19 @@ import (
 	"net"
 	"strings"
 	"time"
+	"os"
 )
 
 //!+
 func echo(c net.Conn, shout string, delay time.Duration) {
 	fmt.Fprintln(c, "\t", strings.ToUpper(shout))
+	fmt.Fprintln(os.Stdout, "\t", strings.ToUpper(shout))
 	time.Sleep(delay)
 	fmt.Fprintln(c, "\t", shout)
+	fmt.Fprintln(os.Stdout, "\t", shout)
 	time.Sleep(delay)
 	fmt.Fprintln(c, "\t", strings.ToLower(shout))
+	fmt.Fprintln(os.Stdout, "\t", strings.ToLower(shout))
 }
 
 func handleConn(c net.Conn) {
@@ -30,6 +34,7 @@ func handleConn(c net.Conn) {
 		echo(c, input.Text(), 1*time.Second)
 	}
 	// NOTE: ignoring potential errors from input.Err()
+	fmt.Println("c.Close()")
 	c.Close()
 }
 
