@@ -15,22 +15,31 @@ func main() {
 
 	// Counter
 	go func() {
-		for x := 0; ; x++ {
+		for x := 0; x < 100; x++ {
 			naturals <- x
 		}
+		close(naturals)
 	}()
 
 	// Squarer
 	go func() {
 		for {
-			x := <-naturals
+			x, ok := <-naturals
+			if !ok {
+				break
+			}
 			squares <- x * x
 		}
+		close(squares)
 	}()
 
 	// Printer (in main goroutine)
 	for {
-		fmt.Println(<-squares)
+		x, ok := <-squares
+		if !ok {
+			break
+		}
+		fmt.Println(x)
 	}
 }
 
