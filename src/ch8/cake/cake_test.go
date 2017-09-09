@@ -8,6 +8,7 @@ import (
 	"time"
 
 	"gobook/src/ch8/cake"
+	"fmt"
 )
 
 var defaults = cake.Shop{
@@ -23,6 +24,7 @@ func Benchmark(b *testing.B) {
 	// Baseline: one baker, one icer, one inscriber.
 	// Each step takes exactly 10ms.  No buffers.
 	cakeshop := defaults
+	fmt.Println(b.N)
 	cakeshop.Work(b.N) // 224 ms
 }
 
@@ -31,6 +33,7 @@ func BenchmarkBuffers(b *testing.B) {
 	cakeshop := defaults
 	cakeshop.BakeBuf = 10
 	cakeshop.IceBuf = 10
+	fmt.Println(b.N)
 	cakeshop.Work(b.N) // 224 ms
 }
 
@@ -41,6 +44,7 @@ func BenchmarkVariable(b *testing.B) {
 	cakeshop.BakeStdDev = cakeshop.BakeTime / 4
 	cakeshop.IceStdDev = cakeshop.IceTime / 4
 	cakeshop.InscribeStdDev = cakeshop.InscribeTime / 4
+	fmt.Println(b.N)
 	cakeshop.Work(b.N) // 259 ms
 }
 

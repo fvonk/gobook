@@ -14,9 +14,12 @@ import (
 	"strings"
 	"time"
 	"os"
+	"sync"
 )
 
-func echo(c net.Conn, shout string, delay time.Duration, done chan bool) {
+func echo(c net.Conn, shout string, delay time.Duration, done chan bool, wg sync.WaitGroup) {
+	defer wg.Done()
+
 	fmt.Fprintln(c, "\t", strings.ToUpper(shout))
 	fmt.Fprintln(os.Stdout, "\t", strings.ToUpper(shout))
 	time.Sleep(delay)
@@ -32,11 +35,23 @@ func echo(c net.Conn, shout string, delay time.Duration, done chan bool) {
 //!+
 func handleConn(c net.Conn) {
 	input := bufio.NewScanner(c)
+	var wg sync.WaitGroup
+
+	done := make(chan bool)
 	for input.Scan() {
-		done := make(chan bool)
-		go echo(c, input.Text(), 1*time.Second, done)
+
+		wg.Add(1)
+		go echo(c, input.Text(), 1*time.Second, done, wg)
 		<-done
 	}
+
+	go func() {
+		wg.Wait()
+		if err := c.(*net.TCPConn).CloseWrite(); err != nil {
+			panic(1)
+		}
+	}()
+
 	// NOTE: ignoring potential errors from input.Err()
 	c.Close()
 }
