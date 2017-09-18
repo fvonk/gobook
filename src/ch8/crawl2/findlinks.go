@@ -14,7 +14,7 @@ import (
 	"log"
 	"os"
 
-	"gopl.io/ch5/links"
+	"gobook/src/ch5/links"
 )
 
 //!+sema

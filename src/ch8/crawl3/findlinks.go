@@ -15,7 +15,8 @@ import (
 	"log"
 	"os"
 
-	"gopl.io/ch5/links"
+	"ch5/links"
+	"flag"
 )
 
 func crawl(url string) []string {
@@ -27,20 +28,42 @@ func crawl(url string) []string {
 	return list
 }
 
+var depth = flag.Int("depth", 1, "depth")
+
+type Link struct {
+	string
+	int
+}
+
 //!+
 func main() {
-	worklist := make(chan []string)  // lists of URLs, may have duplicates
-	unseenLinks := make(chan string) // de-duplicated URLs
+	worklist := make(chan []Link)  // lists of URLs, may have duplicates
+	unseenLinks := make(chan Link) // de-duplicated URLs
+
+	flag.Parse()
+	fmt.Println("depth value is", *depth)
 
 	// Add command-line arguments to worklist.
-	go func() { worklist <- os.Args[1:] }()
+	go func() {
+		var links []Link
+		for _, arg := range os.Args[1:] {
+			links = append(links, Link{arg, 1})
+		}
+		worklist <- links
+	}()
 
 	// Create 20 crawler goroutines to fetch each unseen link.
 	for i := 0; i < 20; i++ {
 		go func() {
 			for link := range unseenLinks {
-				foundLinks := crawl(link)
-				go func() { worklist <- foundLinks }()
+				if link.int <= *depth {
+					var links []Link
+					for _, crawlLink := range crawl(link.string) {
+						links = append(links, Link{crawlLink, link.int + 1})
+					}
+					foundLinks := links
+					go func() { worklist <- foundLinks }()
+				}
 			}
 		}()
 	}
@@ -50,8 +73,8 @@ func main() {
 	seen := make(map[string]bool)
 	for list := range worklist {
 		for _, link := range list {
-			if !seen[link] {
-				seen[link] = true
+			if !seen[link.string] {
+				seen[link.string] = true
 				unseenLinks <- link
 			}
 		}

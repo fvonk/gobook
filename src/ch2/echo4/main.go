@@ -18,6 +18,7 @@ var sep = flag.String("s", "_", "separator")
 
 func main() {
 	flag.Parse()
+	fmt.Println("sep value is", *sep)
 	fmt.Print(strings.Join(flag.Args(), *sep))
 	fmt.Printf("\n%s\n%t\n", *sep, *n)
 	if !*n {
