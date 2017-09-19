@@ -32,26 +32,30 @@ func echo(c net.Conn, shout string, delay time.Duration, done chan bool, wg sync
 	done <- true
 }
 
+
 //!+
 func handleConn(c net.Conn) {
 	input := bufio.NewScanner(c)
 	var wg sync.WaitGroup
 
 	done := make(chan bool)
+
 	for input.Scan() {
 
 		wg.Add(1)
 		go echo(c, input.Text(), 1*time.Second, done, wg)
 		<-done
+		fmt.Println("Done!")
 	}
-
+	fmt.Println("After Done!")
 	go func() {
+		fmt.Println("Wait!")
 		wg.Wait()
 		if err := c.(*net.TCPConn).CloseWrite(); err != nil {
 			panic(1)
 		}
 	}()
-
+	fmt.Println("c.Close!")
 	// NOTE: ignoring potential errors from input.Err()
 	c.Close()
 }

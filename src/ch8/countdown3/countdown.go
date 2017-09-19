@@ -16,17 +16,22 @@ import (
 )
 
 //!+
+var abort = make(chan struct{})
+
+func gofunc() {
+	go func() {
+		os.Stdin.Read(make([]byte, 1)) // read a single byte
+		abort <- struct{}{}
+	}()
+}
 
 func main() {
 	// ...create abort channel...
 
 	//!-
 
-	abort := make(chan struct{})
-	go func() {
-		os.Stdin.Read(make([]byte, 1)) // read a single byte
-		abort <- struct{}{}
-	}()
+
+	gofunc()
 
 	//!+
 	fmt.Println("Commencing countdown.  Press return to abort.")
@@ -38,7 +43,9 @@ func main() {
 			// Do nothing.
 		case <-abort:
 			fmt.Println("Launch aborted!")
-			return
+			//return
+			countdown = 10
+			gofunc()
 		}
 	}
 	launch()

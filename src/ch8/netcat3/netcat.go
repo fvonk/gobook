@@ -11,6 +11,7 @@ import (
 	"log"
 	"net"
 	"os"
+	"fmt"
 )
 
 //!+
@@ -31,6 +32,7 @@ func main() {
 		panic(1)
 	}
 	<-done // wait for background goroutine to finish
+	fmt.Println("Disconnect!")
 }
 
 //!-
