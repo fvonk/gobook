@@ -21,7 +21,11 @@ import (
 )
 
 var vFlag = flag.Bool("v", false, "show verbose progress messages")
-
+type Data struct {
+	nfiles int64
+	nbytes int64
+	root string
+}
 //!+
 func main() {
 	// ...determine roots...
@@ -37,11 +41,11 @@ func main() {
 
 	//!+
 	// Traverse each root of the file tree in parallel.
-	fileSizes := make(chan int64)
+	fileSizes := make(chan Data)
 	var n sync.WaitGroup
 	for _, root := range roots {
 		n.Add(1)
-		go walkDir(root, &n, fileSizes)
+		go walkDir(root, &n, fileSizes, root)
 	}
 	go func() {
 		n.Wait()
@@ -54,44 +58,55 @@ func main() {
 	if *vFlag {
 		tick = time.Tick(500 * time.Millisecond)
 	}
-	var nfiles, nbytes int64
+	data := map[string]Data{}
+	//var nfiles, nbytes int64
 loop:
 	for {
 		select {
-		case size, ok := <-fileSizes:
+		case dt, ok := <-fileSizes:
 			if !ok {
 				break loop // fileSizes was closed
 			}
-			nfiles++
-			nbytes += size
+			if _, ok := data[dt.root]; !ok {
+				data[dt.root] = Data{0, 0, dt.root}
+			}
+			dt.nbytes += data[dt.root].nbytes
+			dt.nfiles += data[dt.root].nfiles + 1
+			data[dt.root] = dt
+			//nfiles++
+			//nbytes += size
 		case <-tick:
-			printDiskUsage(nfiles, nbytes)
+			printDiskUsage(data)
 		}
 	}
 
-	printDiskUsage(nfiles, nbytes) // final totals
+	printDiskUsage(data) // final totals
 	//!+
 	// ...select loop...
 }
 
 //!-
 
-func printDiskUsage(nfiles, nbytes int64) {
-	fmt.Printf("%d files  %.1f GB\n", nfiles, float64(nbytes)/1e9)
+func printDiskUsage(data map[string]Data) {
+	//fmt.Printf("%d files  %.1f GB\n", nfiles, float64(nbytes)/1e9)
+	for root, dt := range data {
+		fmt.Printf("%s %d files %.1f GB\n", root, dt.nfiles, float64(dt.nbytes)/1e9)
+	}
+	fmt.Println()
 }
 
 // walkDir recursively walks the file tree rooted at dir
 // and sends the size of each found file on fileSizes.
 //!+walkDir
-func walkDir(dir string, n *sync.WaitGroup, fileSizes chan<- int64) {
+func walkDir(dir string, n *sync.WaitGroup, fileSizes chan<- Data, root string) {
 	defer n.Done()
 	for _, entry := range dirents(dir) {
 		if entry.IsDir() {
 			n.Add(1)
 			subdir := filepath.Join(dir, entry.Name())
-			go walkDir(subdir, n, fileSizes)
+			go walkDir(subdir, n, fileSizes, root)
 		} else {
-			fileSizes <- entry.Size()
+			fileSizes <- Data{0, entry.Size(), root}
 		}
 	}
 }
