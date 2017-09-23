@@ -70,6 +70,7 @@ loop:
 			for range fileSizes {
 				// Do nothing.
 			}
+			//panic("test")
 			return
 		case size, ok := <-fileSizes:
 			// ...

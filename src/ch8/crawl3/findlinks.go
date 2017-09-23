@@ -19,13 +19,18 @@ import (
 	"flag"
 )
 
-func crawl(url string) []string {
-	fmt.Println(url)
-	list, err := links.Extract(url)
-	if err != nil {
-		log.Print(err)
+func crawl(url string, cancel <-chan struct{}) []string {
+	select {
+	case <-cancel:
+		return nil
+	default:
+		fmt.Println(url)
+		list, err := links.Extract(url, cancel)
+		if err != nil {
+			log.Print(err)
+		}
+		return list
 	}
-	return list
 }
 
 var depth = flag.Int("depth", 1, "depth")
@@ -43,6 +48,12 @@ func main() {
 	flag.Parse()
 	fmt.Println("depth value is", *depth)
 
+	cancel := make(chan struct{})
+	go func() {
+		os.Stdin.Read(make([]byte, 1)) // read a single byte
+		close(cancel)
+	}()
+
 	// Add command-line arguments to worklist.
 	go func() {
 		var links []Link
@@ -55,14 +66,19 @@ func main() {
 	// Create 20 crawler goroutines to fetch each unseen link.
 	for i := 0; i < 20; i++ {
 		go func() {
-			for link := range unseenLinks {
-				if link.int <= *depth {
-					var links []Link
-					for _, crawlLink := range crawl(link.string) {
-						links = append(links, Link{crawlLink, link.int + 1})
+			for {
+				select {
+				case link := <-unseenLinks:
+					if link.int <= *depth {
+						var links []Link
+						for _, crawlLink := range crawl(link.string, cancel) {
+							links = append(links, Link{crawlLink, link.int + 1})
+						}
+						foundLinks := links
+						go func() { worklist <- foundLinks }()
 					}
-					foundLinks := links
-					go func() { worklist <- foundLinks }()
+				case <-cancel:
+					return
 				}
 			}
 		}()
@@ -71,12 +87,18 @@ func main() {
 	// The main goroutine de-duplicates worklist items
 	// and sends the unseen ones to the crawlers.
 	seen := make(map[string]bool)
-	for list := range worklist {
-		for _, link := range list {
-			if !seen[link.string] {
-				seen[link.string] = true
-				unseenLinks <- link
+	for {
+		select {
+		case list := <-worklist:
+			for _, link := range list {
+				if !seen[link.string] {
+					seen[link.string] = true
+					unseenLinks <- link
+				}
 			}
+		case <-cancel:
+			//panic("the end")
+			return
 		}
 	}
 }
