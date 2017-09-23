@@ -57,7 +57,7 @@ func broadcaster() {
 
 //!+handleConn
 func handleConn(conn net.Conn) {
-	ch := make(chan string)// outgoing client messages
+	ch := make(chan string, 5)// outgoing client messages
 	client := client{ch: ch, name: ""}
 	go clientWriter(conn, client.ch)
 
@@ -128,7 +128,9 @@ loop:
 
 func clientWriter(conn net.Conn, ch <-chan string) {
 	for msg := range ch {
-		fmt.Fprintln(conn, msg) // NOTE: ignoring network errors
+		if _, err := fmt.Fprintln(conn, msg); err != nil {
+			fmt.Printf("something goes wrong, error: %s", err)
+		}
 	}
 }
 
