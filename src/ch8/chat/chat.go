@@ -61,26 +61,46 @@ func handleConn(conn net.Conn) {
 	client := client{ch: ch, name: ""}
 	go clientWriter(conn, client.ch)
 
-	client.name = conn.RemoteAddr().String()
-	client.ch <- "You are " + client.name
-	messages <- client.name + " has arrived"
-	entering <- client
-
+	enteredNick := false
+	const disconnectAfter = 30 * time.Second
+	timer := time.After(disconnectAfter)
 	end := make(chan struct{})
-	timer := time.After(30 * time.Second)
 	scan := make(chan struct{})
 	go func() {
 		for {
 			select {
 			case <-timer:
-				fmt.Println("stop")
-				end <- struct{}{}
+				if enteredNick {
+					end <- struct{}{}
+				} else {
+					conn.Close()
+				}
 				return
 			case <-scan:
-				timer = time.After(30 * time.Second)
+				timer = time.After(disconnectAfter)
 			}
 		}
 	}()
+
+	client.ch <- "Enter your nickname"
+	input := bufio.NewScanner(conn)
+	for input.Scan() {
+		scan <- struct{}{}
+		nick := input.Text()
+		if len(nick) > 1 {
+			client.name = nick
+			enteredNick = true
+			break
+		} else {
+			client.ch <- "Enter correct nickname"
+		}
+	}
+	if !enteredNick {
+		return
+	}
+
+	messages <- client.name + " has arrived"
+	entering <- client
 
 	go func() {
 		input := bufio.NewScanner(conn)
@@ -99,8 +119,6 @@ loop:
 			break loop
 		}
 	}
-
-	// NOTE: ignoring potential errors from input.Err()
 
 	leaving <- client
 	messages <- client.name + " has left"
