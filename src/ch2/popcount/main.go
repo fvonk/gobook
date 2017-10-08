@@ -7,17 +7,23 @@
 //!+
 package popcount
 
-// pc[i] is the population count of i.
-var pc [256]byte
+import "sync"
 
-func init() {
+// pc[i] is the population count of i.
+var (
+	muOnce sync.Once
+	pc [256]byte
+)
+
+func initTable() {
 	for i := range pc {
-		pc[i] = pc[i/2] + byte(i&1)
+		pc[i] = pc[i / 2] + byte(i & 1)
 	}
 }
 
 // PopCount returns the population count (number of set bits) of x.
 func PopCount(x uint64) int {
+	muOnce.Do( initTable )
 	return int(pc[byte(x>>(0*8))] +
 		pc[byte(x>>(1*8))] +
 		pc[byte(x>>(2*8))] +

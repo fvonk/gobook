@@ -6,8 +6,24 @@ package popcount_test
 import (
 	"testing"
 
-	"gobook/ch2/popcount"
+	"ch2/popcount"
+	"fmt"
 )
+
+func TestPopCount(t *testing.T) {
+	ch := make(chan bool)
+
+	go func() {
+		fmt.Println(popcount.PopCount(0x1234567890ABCDEF))
+		ch <- true
+	}()
+	go func() {
+		fmt.Println(popcount.PopCount(0x1234567890ABCDEF))
+		ch <- true
+	}()
+	<- ch
+	<- ch
+}
 
 // -- Alternative implementations --
 
