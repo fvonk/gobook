@@ -18,7 +18,10 @@ import (
 )
 
 //!+httpRequestBody
-func httpGetBody(url string) (interface{}, error) {
+func httpGetBody(url string, done chan struct{}) (interface{}, error) {
+	if url == "https://golang.org" {
+		close(done)
+	}
 	resp, err := http.Get(url)
 	if err != nil {
 		return nil, err
@@ -52,7 +55,7 @@ func incomingURLs() <-chan string {
 }
 
 type M interface {
-	Get(key string) (interface{}, error)
+	Get(key string, done chan struct{}) (interface{}, error)
 }
 
 /*
@@ -65,7 +68,7 @@ func Sequential(t *testing.T, m M) {
 	//!+seq
 	for url := range incomingURLs() {
 		start := time.Now()
-		value, err := m.Get(url)
+		value, err := m.Get(url, make(chan struct{}))
 		if err != nil {
 			log.Print(err)
 			continue
@@ -90,7 +93,7 @@ func Concurrent(t *testing.T, m M) {
 		go func(url string) {
 			defer n.Done()
 			start := time.Now()
-			value, err := m.Get(url)
+			value, err := m.Get(url, make(chan struct{}))
 			if err != nil {
 				log.Print(err)
 				return
