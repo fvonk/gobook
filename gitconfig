@@ -1,0 +1,43 @@
+[user]
+	email = pavelcauselov@gmail.com
+	name = Pavel Kozlov
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[core]
+	autocrlf = false
+	safecrlf = true
+	excludesfile = /Users/pavelkozlov/.gitignore_global
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  sts = status origin/dev
+	br = branch
+
+  hist = log --graph --all --pretty=format:'%Cred%h%Creset %ad %s %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --date=short
+  histbr = log --graph --pretty=format:'%Cred%h%Creset %ad %s %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --date=short 
+  his = log --graph --pretty=format:'%Cred%h%Creset %ad %s %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --date=short
+  glc = log --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit	  
+  type = cat-file -t
+  dump = cat-file -p
+	last = log -1 HEAD
+	cia = commit -a -m
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[push]
+	default = current
+[color]
+	ui = true
+[merge]
+	tool = meld
+[diff ""]
+	tool = meld
+[diff]
+	tool = meld
+[commit]
+	template = /Users/pavelkozlov/.stCommitMsg
